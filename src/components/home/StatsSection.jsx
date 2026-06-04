@@ -2,21 +2,22 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: "15K+", label: "Parts Sourced", sublabel: "and counting" },
-  { value: "98%", label: "Client Satisfaction", sublabel: "verified reviews" },
-  { value: "48hr", label: "Average Turnaround", sublabel: "from inquiry to quote" },
-  { value: "200+", label: "Vehicle Models", sublabel: "covered worldwide" },
+  { value: "15K+", label: "Parts Sourced", desc: "and counting" },
+  { value: "98%", label: "Satisfaction Rate", desc: "from verified clients" },
+  { value: "< 2hr", label: "Response Time", desc: "inquiry to quote" },
+  { value: "200+", label: "Models Covered", desc: "worldwide fleet" },
 ];
 
 export default function StatsSection() {
   return (
-    <section className="relative bg-[#0a0a0a] py-24 overflow-hidden">
-      {/* Gold accent lines */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
+    <section className="bg-obsidian relative overflow-hidden py-20">
+      {/* Gold glow center */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gold/5 blur-[100px]" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-white/[0.05]">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -24,13 +25,11 @@ export default function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center md:border-r last:border-r-0 border-white/[0.06]"
+              className="flex flex-col items-center text-center md:px-8 py-4"
             >
-              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#c9a84c] to-[#8a6d2b]">
-                {stat.value}
-              </span>
-              <p className="text-white font-medium mt-3 text-sm md:text-base">{stat.label}</p>
-              <p className="text-white/30 text-xs mt-1">{stat.sublabel}</p>
+              <span className="shimmer-gold font-heading text-5xl md:text-6xl font-bold">{stat.value}</span>
+              <p className="text-white font-body font-medium text-sm mt-3 tracking-wide">{stat.label}</p>
+              <p className="text-white/25 font-body text-xs mt-1">{stat.desc}</p>
             </motion.div>
           ))}
         </div>

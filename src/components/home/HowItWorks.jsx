@@ -1,61 +1,89 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, MessageSquare, PackageCheck, Truck } from 'lucide-react';
+import { FileText, MessageCircle, BadgeCheck, Package } from 'lucide-react';
 
 const steps = [
-  { icon: Search, title: "Submit Inquiry", desc: "Tell us what part you need — include photos if you have them." },
-  { icon: MessageSquare, title: "Get a Quote", desc: "Our specialists locate the part and send you a detailed quote." },
-  { icon: PackageCheck, title: "Inspection", desc: "Every part is thoroughly inspected and quality-verified." },
-  { icon: Truck, title: "Delivery", desc: "Fast, insured shipping straight to your door or workshop." },
+  {
+    num: "01",
+    icon: FileText,
+    title: "Submit Inquiry",
+    desc: "Tell us exactly what part you need. Include photos, part numbers, or any details that help."
+  },
+  {
+    num: "02",
+    icon: MessageCircle,
+    title: "Receive Quote",
+    desc: "Our team locates the part within hours and sends you a competitive, transparent quote."
+  },
+  {
+    num: "03",
+    icon: BadgeCheck,
+    title: "Part Verified",
+    desc: "Every component goes through our rigorous inspection protocol before it leaves us."
+  },
+  {
+    num: "04",
+    icon: Package,
+    title: "Shipped to You",
+    desc: "Fully insured express delivery to your door or workshop, anywhere in the world."
+  },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[#0a0a0a] py-28 md:py-36 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="process" className="bg-obsidian-mid py-28 md:py-36 relative overflow-hidden">
+      {/* Background large text */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-heading text-[20vw] font-black text-white/[0.015] whitespace-nowrap pointer-events-none select-none">
+        PROCESS
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-[1px] w-12 bg-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-sm font-medium tracking-[0.3em] uppercase">Process</span>
-            <div className="h-[1px] w-12 bg-[#c9a84c]" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            How It Works
+          <p className="text-gold text-xs font-body font-semibold tracking-[0.35em] uppercase mb-4">How It Works</p>
+          <h2 className="font-heading text-4xl md:text-6xl text-white">
+            Simple. Fast.<br />Reliable.
           </h2>
-          <p className="text-white/40 mt-4 text-lg max-w-lg mx-auto">
-            From inquiry to delivery — a seamless, transparent process
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-          {/* Connection line */}
-          <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-[1px] bg-gradient-to-r from-[#c9a84c]/20 via-[#c9a84c]/40 to-[#c9a84c]/20]" />
-
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4">
           {steps.map((step, i) => (
             <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={step.num}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center relative"
+              className="group relative"
             >
-              <div className="relative inline-flex items-center justify-center w-24 h-24 border border-[#c9a84c]/20 bg-[#c9a84c]/[0.05] mb-8">
-                <step.icon className="w-8 h-8 text-[#c9a84c]" />
-                <span className="absolute -top-3 -right-3 w-7 h-7 bg-[#c9a84c] text-black text-xs font-bold flex items-center justify-center">
-                  {i + 1}
-                </span>
+              {/* Connector line */}
+              {i < 3 && (
+                <div className="hidden md:block absolute top-12 left-[calc(50%+3rem)] right-0 h-px bg-gradient-to-r from-gold/20 to-transparent z-0" />
+              )}
+
+              <div className="relative z-10 bg-obsidian border border-white/[0.05] group-hover:border-gold/20 p-8 transition-all duration-500">
+                {/* Number */}
+                <div className="flex items-start justify-between mb-8">
+                  <span className="font-heading text-5xl font-black text-white/[0.06] group-hover:text-gold/10 transition-colors duration-500 leading-none">
+                    {step.num}
+                  </span>
+                  <div className="w-10 h-10 border border-white/10 group-hover:border-gold/30 flex items-center justify-center transition-all duration-500">
+                    <step.icon className="w-4 h-4 text-white/40 group-hover:text-gold transition-colors duration-500" />
+                  </div>
+                </div>
+
+                <h3 className="font-heading text-white text-xl font-bold mb-3 group-hover:text-gold-light transition-colors duration-500">
+                  {step.title}
+                </h3>
+                <p className="font-body text-white/35 text-sm leading-relaxed group-hover:text-white/55 transition-colors duration-500">
+                  {step.desc}
+                </p>
               </div>
-              <h3 className="text-white font-semibold text-lg">{step.title}</h3>
-              <p className="text-white/40 text-sm mt-2 max-w-[200px] mx-auto leading-relaxed">
-                {step.desc}
-              </p>
             </motion.div>
           ))}
         </div>

@@ -2,66 +2,70 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const brands = [
-  { name: "Mercedes-Benz", logo: "MB", subtitle: "Since 1926" },
-  { name: "BMW", logo: "BMW", subtitle: "Since 1916" },
-  { name: "Porsche", logo: "P", subtitle: "Since 1931" },
-  { name: "Audi", logo: "AUDI", subtitle: "Since 1909" },
-  { name: "Bentley", logo: "B", subtitle: "Since 1919" },
-  { name: "Rolls-Royce", logo: "RR", subtitle: "Since 1904" },
-  { name: "Maserati", logo: "M", subtitle: "Since 1914" },
-  { name: "Jaguar", logo: "JAG", subtitle: "Since 1922" },
-  { name: "Land Rover", logo: "LR", subtitle: "Since 1948" },
-  { name: "Lexus", logo: "L", subtitle: "Since 1989" },
+  { name: "Mercedes-Benz", short: "MB" },
+  { name: "BMW", short: "BMW" },
+  { name: "Porsche", short: "P" },
+  { name: "Audi", short: "AUDI" },
+  { name: "Bentley", short: "B" },
+  { name: "Rolls-Royce", short: "RR" },
+  { name: "Maserati", short: "M" },
+  { name: "Jaguar", short: "JAG" },
+  { name: "Land Rover", short: "LR" },
+  { name: "Lexus", short: "LS" },
 ];
 
 export default function BrandsShowcase() {
   return (
-    <section id="brands" className="bg-[#0a0a0a] py-28 md:py-36 relative overflow-hidden">
-      {/* Subtle gradient bg */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a]" />
+    <section id="brands" className="bg-obsidian py-28 md:py-36 relative overflow-hidden">
+      {/* Decorative grid */}
+      <div className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(201,168,76,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px)',
+          backgroundSize: '80px 80px'
+        }}
+      />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-[1px] w-12 bg-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-sm font-medium tracking-[0.3em] uppercase">Brands We Cover</span>
-            <div className="h-[1px] w-12 bg-[#c9a84c]" />
+          <div>
+            <p className="text-gold text-xs font-body font-semibold tracking-[0.35em] uppercase mb-4">Marques We Cover</p>
+            <h2 className="font-heading text-4xl md:text-6xl text-white leading-tight">
+              The World's<br />Finest Brands
+            </h2>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            The World's Finest
-          </h2>
-          <p className="text-white/40 mt-4 text-lg max-w-lg mx-auto">
-            We source authentic parts from the most prestigious automotive marques
+          <p className="text-white/30 font-body text-sm max-w-xs leading-relaxed">
+            Authentic OEM components from the most revered automotive manufacturers on the planet.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {/* Brand grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-px bg-white/[0.04]">
           {brands.map((brand, i) => (
             <motion.div
               key={brand.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="group relative"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+              className="group bg-obsidian hover:bg-gold/[0.04] transition-all duration-500 cursor-pointer p-8 flex flex-col items-center justify-center aspect-square relative overflow-hidden"
             >
-              <div className="border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm p-8 flex flex-col items-center justify-center text-center hover:border-[#c9a84c]/30 hover:bg-[#c9a84c]/[0.03] transition-all duration-500 cursor-pointer aspect-square">
-                <span className="text-2xl md:text-3xl font-bold text-white/70 group-hover:text-[#c9a84c] transition-colors duration-500 tracking-wider">
-                  {brand.logo}
-                </span>
-                <span className="mt-3 text-xs text-white/30 group-hover:text-white/60 transition-colors duration-500 tracking-wider uppercase">
-                  {brand.name}
-                </span>
-                <span className="mt-1 text-[10px] text-white/15 group-hover:text-white/30 transition-colors duration-500">
-                  {brand.subtitle}
-                </span>
-              </div>
+              {/* Hover corner accent */}
+              <div className="absolute top-0 left-0 w-0 h-0 border-t-[2px] border-l-[2px] border-gold/0 group-hover:border-gold/60 group-hover:w-6 group-hover:h-6 transition-all duration-500" />
+              <div className="absolute bottom-0 right-0 w-0 h-0 border-b-[2px] border-r-[2px] border-gold/0 group-hover:border-gold/60 group-hover:w-6 group-hover:h-6 transition-all duration-500" />
+
+              <span className="font-heading text-2xl font-bold text-white/25 group-hover:text-gold/80 transition-colors duration-500">
+                {brand.short}
+              </span>
+              <span className="font-body text-[10px] text-white/20 group-hover:text-white/50 transition-colors duration-500 tracking-[0.2em] uppercase mt-3 text-center">
+                {brand.name}
+              </span>
             </motion.div>
           ))}
         </div>

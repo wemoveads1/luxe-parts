@@ -1,0 +1,89 @@
+{
+  "name": "PartInquiry",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Customer's full name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Customer's email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Customer's phone number"
+    },
+    "brand": {
+      "type": "string",
+      "enum": [
+        "Mercedes-Benz",
+        "BMW",
+        "Audi",
+        "Porsche",
+        "Bentley",
+        "Rolls-Royce",
+        "Maserati",
+        "Jaguar",
+        "Land Rover",
+        "Lexus",
+        "Other"
+      ],
+      "description": "Car brand"
+    },
+    "model": {
+      "type": "string",
+      "description": "Car model"
+    },
+    "year": {
+      "type": "string",
+      "description": "Car year"
+    },
+    "part_needed": {
+      "type": "string",
+      "description": "Description of the part needed"
+    },
+    "part_category": {
+      "type": "string",
+      "enum": [
+        "Engine",
+        "Transmission",
+        "Suspension",
+        "Brakes",
+        "Electrical",
+        "Interior",
+        "Exterior",
+        "Wheels & Tires",
+        "Exhaust",
+        "Other"
+      ],
+      "description": "Category of the part"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Photo of the part if available"
+    },
+    "additional_notes": {
+      "type": "string",
+      "description": "Any additional information"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "in_progress",
+        "quoted",
+        "completed",
+        "cancelled"
+      ],
+      "default": "new",
+      "description": "Status of the inquiry"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "part_needed",
+    "brand"
+  ]
+}

@@ -1,51 +1,61 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
 export default function FooterSection({ onOpenInquiry }) {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-white/[0.06]">
+    <footer className="bg-obsidian">
       {/* CTA Banner */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Can't Find What You Need?
-          </h2>
-          <p className="text-white/40 text-lg mb-10 max-w-md mx-auto">
-            Our sourcing network spans across Europe and the Americas. If it exists, we'll find it.
-          </p>
-          <button
+      <div className="relative overflow-hidden border-t border-white/[0.05]">
+        <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.04] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+          <div>
+            <p className="text-gold text-xs font-body font-semibold tracking-[0.35em] uppercase mb-4">Can't Find It?</p>
+            <h2 className="font-heading text-4xl md:text-6xl text-white leading-tight">
+              We'll Source<br />Any Part.
+            </h2>
+            <p className="text-white/30 font-body text-sm mt-4 max-w-sm leading-relaxed">
+              Our network spans Europe, the Americas, and beyond. If it exists, we'll track it down.
+            </p>
+          </div>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             onClick={onOpenInquiry}
-            className="inline-flex items-center bg-[#c9a84c] hover:bg-[#b8993e] text-black font-semibold px-10 py-4 text-base transition-all duration-300"
+            className="group flex items-center gap-4 bg-gold hover:bg-gold-light text-black font-body font-bold text-sm tracking-[0.1em] uppercase px-10 py-5 transition-all duration-300 glow-gold whitespace-nowrap"
           >
             Submit an Inquiry
-          </button>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </motion.button>
         </div>
       </div>
 
-      {/* Footer content */}
-      <div className="border-t border-white/[0.06]">
+      {/* Footer links */}
+      <div className="border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-[#c9a84c] flex items-center justify-center">
-                  <span className="text-black font-bold text-sm">LP</span>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-gold flex items-center justify-center">
+                  <span className="text-black font-heading font-black text-xs">LP</span>
                 </div>
-                <span className="text-white font-semibold tracking-wide">LUXE PARTS</span>
+                <span className="text-white font-body font-semibold tracking-[0.15em] text-sm uppercase">Luxe Parts</span>
               </div>
-              <p className="text-white/30 text-sm leading-relaxed">
-                Premium second-hand OEM parts for luxury vehicles. Authenticated, inspected, and guaranteed.
+              <p className="text-white/25 font-body text-xs leading-relaxed max-w-xs">
+                Premium second-hand OEM parts for the world's most prestigious vehicles.
               </p>
             </div>
 
             <div>
-              <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                {["Brands", "Categories", "How It Works", "Testimonials"].map(link => (
+              <h4 className="text-white font-body font-semibold text-xs tracking-[0.2em] uppercase mb-5">Navigate</h4>
+              <div className="space-y-3">
+                {["Brands", "Categories", "Process", "Reviews"].map(link => (
                   <button
                     key={link}
-                    onClick={() => document.getElementById(link.toLowerCase().replace(/\s+/g, '-'))?.scrollIntoView({ behavior: 'smooth' })}
-                    className="block text-white/30 hover:text-[#c9a84c] text-sm transition-colors duration-300"
+                    onClick={() => document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
+                    className="block text-white/25 hover:text-gold font-body text-xs tracking-wider transition-colors duration-300"
                   >
                     {link}
                   </button>
@@ -54,32 +64,30 @@ export default function FooterSection({ onOpenInquiry }) {
             </div>
 
             <div>
-              <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-4">Contact</h4>
+              <h4 className="text-white font-body font-semibold text-xs tracking-[0.2em] uppercase mb-5">Contact</h4>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-white/30 text-sm">
-                  <Mail className="w-4 h-4 text-[#c9a84c]" />
-                  info@luxeparts.com
-                </div>
-                <div className="flex items-center gap-3 text-white/30 text-sm">
-                  <Phone className="w-4 h-4 text-[#c9a84c]" />
-                  +1 (555) 987-6543
-                </div>
-                <div className="flex items-center gap-3 text-white/30 text-sm">
-                  <MapPin className="w-4 h-4 text-[#c9a84c]" />
-                  Los Angeles, CA
-                </div>
+                {[
+                  { Icon: Mail, text: "info@luxeparts.com" },
+                  { Icon: Phone, text: "+1 (555) 987-6543" },
+                  { Icon: MapPin, text: "Los Angeles, CA" },
+                ].map(({ Icon, text }) => (
+                  <div key={text} className="flex items-center gap-3">
+                    <Icon className="w-3.5 h-3.5 text-gold/60" />
+                    <span className="text-white/25 font-body text-xs">{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-white/[0.04] flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/20 text-xs">
+          <div className="mt-10 pt-8 border-t border-white/[0.04] flex flex-col md:flex-row justify-between items-center gap-3">
+            <p className="text-white/15 font-body text-xs">
               © {new Date().getFullYear()} Luxe Parts. All rights reserved.
             </p>
             <div className="flex gap-6">
-              {["Privacy Policy", "Terms of Service"].map(link => (
-                <button key={link} className="text-white/20 hover:text-white/40 text-xs transition-colors">
-                  {link}
+              {["Privacy", "Terms"].map(l => (
+                <button key={l} className="text-white/15 hover:text-white/30 font-body text-xs transition-colors">
+                  {l}
                 </button>
               ))}
             </div>
