@@ -68,8 +68,8 @@ export default function FooterSection({ onOpenInquiry }) {
               <div className="space-y-3">
                 {[
                   { Icon: Mail, text: "info@luxeparts.com" },
-                  { Icon: Phone, text: "+1 (555) 987-6543" },
-                  { Icon: MapPin, text: "Los Angeles, CA" },
+                  { Icon: Phone, text: "0400000000" },
+                  { Icon: MapPin, text: "Melbourne australia" },
                 ].map(({ Icon, text }) => (
                   <div key={text} className="flex items-center gap-3">
                     <Icon className="w-3.5 h-3.5 text-gold/60" />

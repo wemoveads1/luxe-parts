@@ -148,7 +148,7 @@ export default function HeroSection({ onOpenInquiry }) {
       <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-4 z-10">
         <div className="w-[1px] h-16 bg-gradient-to-b from-transparent to-white/20" />
         <span className="text-white/20 text-[10px] tracking-[0.4em] uppercase font-body rotate-90 whitespace-nowrap">
-          Est. 2019 — Los Angeles, CA
+          Est. 2019 — Melbourne, Australia
         </span>
         <div className="w-[1px] h-16 bg-gradient-to-b from-white/20 to-transparent" />
       </div>
