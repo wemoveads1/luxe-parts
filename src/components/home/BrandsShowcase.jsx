@@ -5,7 +5,7 @@ const brandLogos = {
   "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg",
   "BMW": "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg",
   "Porsche": "https://upload.wikimedia.org/wikipedia/commons/4/44/Porsche_hood_emblem.png",
-  "Audi": "https://upload.wikimedia.org/wikipedia/commons/9/92/Audi-Logo_2016.svg",
+  "Audi": "https://upload.wikimedia.org/wikipedia/en/a/a3/Audi_Logo.svg",
   "Bentley": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Bentley_logo.svg",
   "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/6/69/Rolls-Royce_Motor_Cars_logo.svg",
   "Maserati": "https://upload.wikimedia.org/wikipedia/commons/0/00/Maserati_logo.svg",
