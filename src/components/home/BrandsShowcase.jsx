@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const brandLogos = {
   "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg",
   "BMW": "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg",
-  "Porsche": "https://upload.wikimedia.org/wikipedia/en/7/70/Porsche_logo.svg",
+  "Porsche": "https://upload.wikimedia.org/wikipedia/commons/4/44/Porsche_hood_emblem.png",
   "Audi": "https://upload.wikimedia.org/wikipedia/commons/9/92/Audi-Logo_2016.svg",
   "Bentley": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Bentley_logo.svg",
   "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/6/69/Rolls-Royce_Motor_Cars_logo.svg",
