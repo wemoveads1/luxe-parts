@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const brandLogos = {
-  "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/240px-Mercedes-Logo.svg.png",
+  "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg",
   "BMW": "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg",
   "Porsche": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Porsche_logo.svg/240px-Porsche_logo.svg.png",
   "Audi": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/320px-Audi-Logo_2016.svg.png",
