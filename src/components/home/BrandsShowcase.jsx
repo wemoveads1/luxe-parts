@@ -2,16 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const brands = [
-  { name: "Mercedes-Benz", short: "MB" },
-  { name: "BMW", short: "BMW" },
-  { name: "Porsche", short: "P" },
-  { name: "Audi", short: "AUDI" },
-  { name: "Bentley", short: "B" },
-  { name: "Rolls-Royce", short: "RR" },
-  { name: "Maserati", short: "M" },
-  { name: "Jaguar", short: "JAG" },
-  { name: "Land Rover", short: "LR" },
-  { name: "Lexus", short: "LS" },
+  { name: "Mercedes-Benz", logo: "https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" },
+  { name: "BMW", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" },
+  { name: "Porsche", logo: "https://upload.wikimedia.org/wikipedia/de/5/5f/Porsche_Logo.svg" },
+  { name: "Audi", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Audi_logo_detail.svg" },
+  { name: "Bentley", logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bentley_logo.svg" },
+  { name: "Rolls-Royce", logo: "https://upload.wikimedia.org/wikipedia/commons/2/28/Rolls-Royce-Logo.svg" },
+  { name: "Maserati", logo: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Maserati_logo.svg" },
+  { name: "Jaguar", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Jaguar_Cars_logo.svg" },
+  { name: "Land Rover", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Land_Rover_logo.svg" },
+  { name: "Lexus", logo: "https://upload.wikimedia.org/wikipedia/commons/3/38/Lexus_division_emblem.svg" },
 ];
 
 export default function BrandsShowcase() {
@@ -60,10 +60,12 @@ export default function BrandsShowcase() {
               <div className="absolute top-0 left-0 w-0 h-0 border-t-[2px] border-l-[2px] border-gold/0 group-hover:border-gold/60 group-hover:w-6 group-hover:h-6 transition-all duration-500" />
               <div className="absolute bottom-0 right-0 w-0 h-0 border-b-[2px] border-r-[2px] border-gold/0 group-hover:border-gold/60 group-hover:w-6 group-hover:h-6 transition-all duration-500" />
 
-              <span className="font-heading text-2xl font-bold text-white/25 group-hover:text-gold/80 transition-colors duration-500">
-                {brand.short}
-              </span>
-              <span className="font-body text-[10px] text-white/20 group-hover:text-white/50 transition-colors duration-500 tracking-[0.2em] uppercase mt-3 text-center">
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                className="w-14 h-14 object-contain opacity-25 group-hover:opacity-70 transition-all duration-500 filter invert"
+              />
+              <span className="font-body text-[10px] text-white/20 group-hover:text-white/50 transition-colors duration-500 tracking-[0.2em] uppercase mt-4 text-center">
                 {brand.name}
               </span>
             </motion.div>
