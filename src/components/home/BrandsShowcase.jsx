@@ -1,81 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Inline SVG brand marks — no external deps, always renders
+const brandLogos = {
+  "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/200px-Mercedes-Logo.svg.png",
+  "BMW": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/200px-BMW.svg.png",
+  "Porsche": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Porsche_logo.svg/200px-Porsche_logo.svg.png",
+  "Audi": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/300px-Audi-Logo_2016.svg.png",
+  "Bentley": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bentley_logo.svg/200px-Bentley_logo.svg.png",
+  "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Rolls-Royce_Motor_Cars_logo.svg/200px-Rolls-Royce_Motor_Cars_logo.svg.png",
+  "Maserati": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Maserati_logo.svg/200px-Maserati_logo.svg.png",
+  "Jaguar": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jaguar_Cars_logo.svg/300px-Jaguar_Cars_logo.svg.png",
+  "Land Rover": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Land_Rover_logo.svg/300px-Land_Rover_logo.svg.png",
+  "Lexus": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lexus_division_emblem.svg/200px-Lexus_division_emblem.svg.png",
+};
+
 const BrandLogo = ({ name }) => {
-  const logos = {
-    "Mercedes-Benz": (
-      <svg viewBox="0 0 100 100" className="w-12 h-12">
-        <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" strokeWidth="3"/>
-        <line x1="50" y1="4" x2="50" y2="50" stroke="currentColor" strokeWidth="3"/>
-        <line x1="50" y1="50" x2="9" y2="73" stroke="currentColor" strokeWidth="3"/>
-        <line x1="50" y1="50" x2="91" y2="73" stroke="currentColor" strokeWidth="3"/>
-      </svg>
-    ),
-    "BMW": (
-      <svg viewBox="0 0 100 100" className="w-12 h-12">
-        <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" strokeWidth="3"/>
-        <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M50 20 A30 30 0 0 1 80 50 L50 50Z" fill="currentColor" opacity="0.6"/>
-        <path d="M50 80 A30 30 0 0 1 20 50 L50 50Z" fill="currentColor" opacity="0.6"/>
-        <text x="50" y="55" textAnchor="middle" fontSize="14" fontWeight="bold" fontFamily="serif" fill="currentColor">BMW</text>
-      </svg>
-    ),
-    "Porsche": (
-      <svg viewBox="0 0 100 100" className="w-12 h-12">
-        <rect x="5" y="5" width="90" height="90" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <rect x="5" y="5" width="45" height="45" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-        <text x="50" y="56" textAnchor="middle" fontSize="13" fontWeight="900" fontFamily="sans-serif" fill="currentColor" letterSpacing="1">PORSCHE</text>
-        <line x1="5" y1="50" x2="95" y2="50" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
-    "Audi": (
-      <svg viewBox="0 0 140 50" className="w-20 h-8">
-        {[20, 53, 87, 120].map((cx, i) => (
-          <circle key={i} cx={cx} cy="25" r="20" fill="none" stroke="currentColor" strokeWidth="3"/>
-        ))}
-      </svg>
-    ),
-    "Bentley": (
-      <svg viewBox="0 0 100 100" className="w-12 h-12">
-        <ellipse cx="50" cy="50" rx="46" ry="46" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <text x="50" y="45" textAnchor="middle" fontSize="36" fontWeight="900" fontFamily="serif" fill="currentColor">B</text>
-        <text x="50" y="70" textAnchor="middle" fontSize="8" fontWeight="600" fontFamily="sans-serif" fill="currentColor" letterSpacing="2">BENTLEY</text>
-      </svg>
-    ),
-    "Rolls-Royce": (
-      <svg viewBox="0 0 100 100" className="w-12 h-12">
-        <text x="50" y="48" textAnchor="middle" fontSize="28" fontWeight="900" fontFamily="serif" fill="currentColor">RR</text>
-        <line x1="15" y1="58" x2="85" y2="58" stroke="currentColor" strokeWidth="1.5"/>
-        <text x="50" y="74" textAnchor="middle" fontSize="7" fontWeight="500" fontFamily="sans-serif" fill="currentColor" letterSpacing="3">ROLLS-ROYCE</text>
-      </svg>
-    ),
-    "Maserati": (
-      <svg viewBox="0 0 60 100" className="w-8 h-12">
-        <polyline points="30,5 5,50 30,50 30,95" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/>
-        <polyline points="30,5 55,50 30,50" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/>
-      </svg>
-    ),
-    "Jaguar": (
-      <svg viewBox="0 0 100 60" className="w-20 h-12">
-        <text x="50" y="42" textAnchor="middle" fontSize="20" fontWeight="900" fontFamily="serif" fill="currentColor" letterSpacing="4">JAGUAR</text>
-        <path d="M15 48 Q50 56 85 48" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
-    "Land Rover": (
-      <svg viewBox="0 0 120 60" className="w-20 h-10">
-        <rect x="5" y="10" width="110" height="40" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <text x="60" y="36" textAnchor="middle" fontSize="11" fontWeight="700" fontFamily="sans-serif" fill="currentColor" letterSpacing="2">LAND ROVER</text>
-      </svg>
-    ),
-    "Lexus": (
-      <svg viewBox="0 0 100 100" className="w-12 h-12">
-        <ellipse cx="50" cy="50" rx="46" ry="46" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <text x="50" y="58" textAnchor="middle" fontSize="32" fontWeight="300" fontFamily="serif" fill="currentColor" letterSpacing="2">L</text>
-      </svg>
-    ),
-  };
-  return logos[name] || null;
+  const src = brandLogos[name];
+  if (!src) return null;
+  return (
+    <img
+      src={src}
+      alt={name}
+      className="w-14 h-14 object-contain"
+      style={{ filter: 'brightness(0) invert(1)', opacity: 0.5 }}
+    />
+  );
 };
 
 const brands = [
