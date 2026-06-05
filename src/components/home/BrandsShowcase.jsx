@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 const brandLogos = {
   "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg",
   "BMW": "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg",
-  "Porsche": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Porsche_logo.svg/240px-Porsche_logo.svg.png",
-  "Audi": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/320px-Audi-Logo_2016.svg.png",
-  "Bentley": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bentley_logo.svg/240px-Bentley_logo.svg.png",
-  "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Rolls-Royce_Motor_Cars_logo.svg/240px-Rolls-Royce_Motor_Cars_logo.svg.png",
-  "Maserati": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Maserati_logo.svg/240px-Maserati_logo.svg.png",
-  "Jaguar": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jaguar_Cars_logo.svg/320px-Jaguar_Cars_logo.svg.png",
-  "Land Rover": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Land_Rover_logo.svg/320px-Land_Rover_logo.svg.png",
-  "Lexus": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lexus_division_emblem.svg/240px-Lexus_division_emblem.svg.png",
+  "Porsche": "https://upload.wikimedia.org/wikipedia/en/7/70/Porsche_logo.svg",
+  "Audi": "https://upload.wikimedia.org/wikipedia/commons/9/92/Audi-Logo_2016.svg",
+  "Bentley": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Bentley_logo.svg",
+  "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/6/69/Rolls-Royce_Motor_Cars_logo.svg",
+  "Maserati": "https://upload.wikimedia.org/wikipedia/commons/0/00/Maserati_logo.svg",
+  "Jaguar": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Jaguar_Cars_logo.svg",
+  "Land Rover": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Land_Rover_logo.svg",
+  "Lexus": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Lexus_division_emblem.svg",
 };
 
 const BrandLogo = ({ name }) => {
