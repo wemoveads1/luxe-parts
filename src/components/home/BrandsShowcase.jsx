@@ -1,17 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const MOTOMARKS_KEY = "pk_5ab9a4d3d895e62419a43d868ad61287";
+
 const brandLogos = {
-  "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/200px-Mercedes-Logo.svg.png",
-  "BMW": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/200px-BMW.svg.png",
-  "Porsche": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Porsche_logo.svg/200px-Porsche_logo.svg.png",
-  "Audi": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/300px-Audi-Logo_2016.svg.png",
-  "Bentley": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bentley_logo.svg/200px-Bentley_logo.svg.png",
-  "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Rolls-Royce_Motor_Cars_logo.svg/200px-Rolls-Royce_Motor_Cars_logo.svg.png",
-  "Maserati": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Maserati_logo.svg/200px-Maserati_logo.svg.png",
-  "Jaguar": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jaguar_Cars_logo.svg/300px-Jaguar_Cars_logo.svg.png",
-  "Land Rover": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Land_Rover_logo.svg/300px-Land_Rover_logo.svg.png",
-  "Lexus": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lexus_division_emblem.svg/200px-Lexus_division_emblem.svg.png",
+  "Mercedes-Benz": `https://motomarks.io/img/mercedes-benz?token=${MOTOMARKS_KEY}`,
+  "BMW": `https://motomarks.io/img/bmw?token=${MOTOMARKS_KEY}`,
+  "Porsche": `https://motomarks.io/img/porsche?token=${MOTOMARKS_KEY}`,
+  "Audi": `https://motomarks.io/img/audi?token=${MOTOMARKS_KEY}`,
+  "Bentley": `https://motomarks.io/img/bentley?token=${MOTOMARKS_KEY}`,
+  "Rolls-Royce": `https://motomarks.io/img/rolls-royce?token=${MOTOMARKS_KEY}`,
+  "Maserati": `https://motomarks.io/img/maserati?token=${MOTOMARKS_KEY}`,
+  "Jaguar": `https://motomarks.io/img/jaguar?token=${MOTOMARKS_KEY}`,
+  "Land Rover": `https://motomarks.io/img/land-rover?token=${MOTOMARKS_KEY}`,
+  "Lexus": `https://motomarks.io/img/lexus?token=${MOTOMARKS_KEY}`,
 };
 
 const BrandLogo = ({ name }) => {
