@@ -8,21 +8,22 @@ const brandLogos = {
   "Audi": "https://upload.wikimedia.org/wikipedia/en/a/a3/Audi_Logo.svg",
   "Bentley": "https://upload.wikimedia.org/wikipedia/de/thumb/6/6c/Bentley_logo.svg/1280px-Bentley_logo.svg.png",
   "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/commons/5/52/Rolls-Royce_Motor_Cars_logo.svg",
-  "Maserati": "https://upload.wikimedia.org/wikipedia/commons/0/00/Maserati_logo.svg",
-  "Jaguar": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Jaguar_Cars_logo.svg",
-  "Land Rover": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Land_Rover_logo.svg",
-  "Lexus": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Lexus_division_emblem.svg",
+  "Maserati": "https://upload.wikimedia.org/wikipedia/de/6/64/Maserati_logo.svg",
+  "Jaguar": "https://upload.wikimedia.org/wikipedia/en/7/78/Jaguar_logo_2021.svg",
+  "Land Rover": "https://upload.wikimedia.org/wikipedia/en/9/9f/Land_Rover_logo_black.svg",
+  "Lexus": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lexus-cars-logo-emblem.jpg",
 };
 
 const BrandLogo = ({ name }) => {
   const src = brandLogos[name];
   if (!src) return null;
+  const isWhite = ["Rolls-Royce", "Jaguar", "Land Rover", "Lexus"].includes(name);
   return (
     <img
       src={src}
       alt={name}
       className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-500"
-      style={name === "Rolls-Royce" ? { filter: 'brightness(0) invert(1)' } : undefined}
+      style={isWhite ? { filter: 'brightness(0) invert(1)' } : undefined}
     />
   );
 };
