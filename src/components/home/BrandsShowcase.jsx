@@ -3,17 +3,20 @@ import { motion } from 'framer-motion';
 
 const MOTOMARKS_KEY = "pk_5ab9a4d3d895e62419a43d868ad61287";
 
+const mkUrl = (slug) =>
+  `https://motomarks.io/img/${slug}?size=md&type=badge&format=png&aspect=square&token=${MOTOMARKS_KEY}`;
+
 const brandLogos = {
-  "Mercedes-Benz": `https://motomarks.io/img/mercedes-benz?token=${MOTOMARKS_KEY}`,
-  "BMW": `https://motomarks.io/img/bmw?token=${MOTOMARKS_KEY}`,
-  "Porsche": `https://motomarks.io/img/porsche?token=${MOTOMARKS_KEY}`,
-  "Audi": `https://motomarks.io/img/audi?token=${MOTOMARKS_KEY}`,
-  "Bentley": `https://motomarks.io/img/bentley?token=${MOTOMARKS_KEY}`,
-  "Rolls-Royce": `https://motomarks.io/img/rolls-royce?token=${MOTOMARKS_KEY}`,
-  "Maserati": `https://motomarks.io/img/maserati?token=${MOTOMARKS_KEY}`,
-  "Jaguar": `https://motomarks.io/img/jaguar?token=${MOTOMARKS_KEY}`,
-  "Land Rover": `https://motomarks.io/img/land-rover?token=${MOTOMARKS_KEY}`,
-  "Lexus": `https://motomarks.io/img/lexus?token=${MOTOMARKS_KEY}`,
+  "Mercedes-Benz": mkUrl("mercedes-benz"),
+  "BMW": mkUrl("bmw"),
+  "Porsche": mkUrl("porsche"),
+  "Audi": mkUrl("audi"),
+  "Bentley": mkUrl("bentley"),
+  "Rolls-Royce": mkUrl("rolls-royce"),
+  "Maserati": mkUrl("maserati"),
+  "Jaguar": mkUrl("jaguar"),
+  "Land Rover": mkUrl("land-rover"),
+  "Lexus": mkUrl("lexus"),
 };
 
 const BrandLogo = ({ name }) => {
