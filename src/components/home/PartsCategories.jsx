@@ -55,7 +55,7 @@ export default function PartsCategories({ onOpenInquiry }) {
                 src={cat.image}
                 alt={cat.name}
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                style={{ filter: 'brightness(0.25) saturate(0.6)' }}
+                style={{ filter: 'brightness(0.45) saturate(0.8)' }}
               />
               {/* Bottom gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
