@@ -2,16 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const brandLogos = {
-  "Mercedes-Benz": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/240px-Mercedes-Logo.svg.png",
-  "BMW": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/240px-BMW.svg.png",
-  "Porsche": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Porsche_logo.svg/240px-Porsche_logo.svg.png",
-  "Audi": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/320px-Audi-Logo_2016.svg.png",
-  "Bentley": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bentley_logo.svg/240px-Bentley_logo.svg.png",
-  "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Rolls-Royce_Motor_Cars_logo.svg/240px-Rolls-Royce_Motor_Cars_logo.svg.png",
-  "Maserati": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Maserati_logo.svg/240px-Maserati_logo.svg.png",
-  "Jaguar": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jaguar_Cars_logo.svg/320px-Jaguar_Cars_logo.svg.png",
-  "Land Rover": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Land_Rover_logo.svg/320px-Land_Rover_logo.svg.png",
-  "Lexus": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lexus_division_emblem.svg/240px-Lexus_division_emblem.svg.png",
+  "Mercedes-Benz": "https://logo.clearbit.com/mercedes-benz.com",
+  "BMW": "https://logo.clearbit.com/bmw.com",
+  "Porsche": "https://logo.clearbit.com/porsche.com",
+  "Audi": "https://logo.clearbit.com/audi.com",
+  "Bentley": "https://logo.clearbit.com/bentleymotors.com",
+  "Rolls-Royce": "https://logo.clearbit.com/rolls-roycemotorcars.com",
+  "Maserati": "https://logo.clearbit.com/maserati.com",
+  "Jaguar": "https://logo.clearbit.com/jaguar.com",
+  "Land Rover": "https://logo.clearbit.com/landrover.com",
+  "Lexus": "https://logo.clearbit.com/lexus.com",
 };
 
 const BrandLogo = ({ name }) => {
