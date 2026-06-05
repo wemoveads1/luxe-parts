@@ -6,8 +6,8 @@ const brandLogos = {
   "BMW": "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg",
   "Porsche": "https://upload.wikimedia.org/wikipedia/commons/4/44/Porsche_hood_emblem.png",
   "Audi": "https://upload.wikimedia.org/wikipedia/en/a/a3/Audi_Logo.svg",
-  "Bentley": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Bentley_logo.svg",
-  "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/en/6/69/Rolls-Royce_Motor_Cars_logo.svg",
+  "Bentley": "https://upload.wikimedia.org/wikipedia/de/thumb/6/6c/Bentley_logo.svg/1280px-Bentley_logo.svg.png",
+  "Rolls-Royce": "https://upload.wikimedia.org/wikipedia/commons/5/52/Rolls-Royce_Motor_Cars_logo.svg",
   "Maserati": "https://upload.wikimedia.org/wikipedia/commons/0/00/Maserati_logo.svg",
   "Jaguar": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Jaguar_Cars_logo.svg",
   "Land Rover": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Land_Rover_logo.svg",
@@ -22,6 +22,7 @@ const BrandLogo = ({ name }) => {
       src={src}
       alt={name}
       className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-500"
+      style={name === "Rolls-Royce" ? { filter: 'brightness(0) invert(1)' } : undefined}
     />
   );
 };
