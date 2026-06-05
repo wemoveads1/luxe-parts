@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 const categories = [
   { name: "Engine", tag: "01", desc: "Blocks, turbos, cams & more", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" },
   { name: "Transmission", tag: "02", desc: "Gearboxes & drivetrain", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" },
-  { name: "Electrical", tag: "03", desc: "ECUs, sensors & modules", image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" },
+  { name: "Electrical", tag: "03", desc: "ECUs, sensors & modules", image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80" },
   { name: "Interior", tag: "04", desc: "Seats, trim & panels", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" },
   { name: "Exterior", tag: "05", desc: "Body panels & lighting", image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" },
   { name: "Suspension", tag: "06", desc: "Shocks, arms & subframes", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80" },
